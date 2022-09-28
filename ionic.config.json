@@ -1,0 +1,7 @@
+{
+  "name": "dftab",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
