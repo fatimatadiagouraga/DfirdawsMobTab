@@ -1,17 +1,156 @@
 <ion-header [translucent]="true">
+
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Ionic Segments
     </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="primary">
+
+    <ion-segment 
+    value="all" 
+    color="tertiary" 
+    scrollable="true"
+    mode="ios"
+    [(ngModel)]="segmentModel" 
+    (ionChange)="segmentChanged($event)">
+
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="favorites">
+        <ion-label>Favorites</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="settings">
+        <ion-label>Settings</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="profile">
+        <ion-label>Profile</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="just">
+        <ion-label>Just</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="onemore">
+        <ion-label>One More</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="tofill">
+        <ion-label>To Fill</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card *ngIf="segmentModel === 'all'">
+
+    
+    <div class="a-box">
+      <div class="img-container">
+        <div class="img-inner">
+          <div class="inner-skew">
+            <img src="https://images.unsplash.com/photo-1584791097929-aa825fe8e1e1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ">
+          </div>
+        </div>
+      </div>
+      <div class="text-container">
+        <h3>A blue bird</h3>
+        <div>
+          This a demo experiment to skew image container. It looks good.
+      </div>
+      </div>
+    </div>
+    <!-- <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>All</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      
+   
+    </ion-card-content> -->
+  </ion-card>
+  
+  <ion-card *ngIf="segmentModel === 'favorites'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>Favorites</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngIf="segmentModel === 'profile'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>Profile</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentModel === 'settings'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>Settings</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentModel === 'just'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>Just</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentModel === 'onemore'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>One More</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="segmentModel === 'tofill'">
+    <ion-card-header>
+      <ion-card-subtitle>Segment Content</ion-card-subtitle>
+      <ion-card-title>To Fill</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
+

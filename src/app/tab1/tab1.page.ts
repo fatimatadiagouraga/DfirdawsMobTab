@@ -5,8 +5,23 @@ import { Component } from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
+
 export class Tab1Page {
 
-  constructor() {}
+  segmentModel = "favorites";
+
+  constructor(
+  ) { }
+
+  ngOnInit() {
+
+  }
+
+  segmentChanged(event){
+    console.log(this.segmentModel);
+    
+    console.log(event);
+  }
 
 }
